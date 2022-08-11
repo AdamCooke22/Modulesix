@@ -42,43 +42,32 @@ from pathlib import path
 
 To use the Financial Planning Tools file simply clone the repository and open the san_francisco_housing.ipynb file in Jupyter Notebook.
 
-Upon opening the file you will have the option to run the whole note book and that will provide you with all of the calculations, evaluations, and visualizations for the valuations of crypto wallets and investment portfolios. Determining if members have enough to build an emergency fund into their financial plan, and forecasting of the cumulative returns of retirement portfolios.
+Upon opening the file you will have the option to run the whole note book and that will provide you with all of the calculations, evaluations, and visualizations for the valuations of the housing data in San Francisco. 
 
+This is where we used the groupby function to group the census data by year and created a dataframe that averages the results.![Screenshot 2022-08-10 140925](https://user-images.githubusercontent.com/107158380/184040102-54250a64-6b8b-4ca4-94d0-8b9cd3492e1d.png)
 
-This is where we used the json.dumps function to review the response data from the api call we used for BTC.![Screenshot 2022-08-03 193852](https://user-images.githubusercontent.com/107158380/182755890-ef8acb8d-ccfc-4d78-b0b7-1ef42b369ece.png)
+This is where we plotted the grouped data using the hvplot.bar function. ![Screenshot 2022-08-10 140957](https://user-images.githubusercontent.com/107158380/184040270-cecf83cb-abef-4c0f-a420-4d6ab8b27838.png)  Over the period between 2010 through 2016, the general trand in the number of housing units is around a 2000 increase in the number of housing units every year.
 
-This is where we used the json.dumps function to review the response data from the api call we used for ETH.![Screenshot 2022-08-03 193923](https://user-images.githubusercontent.com/107158380/182755928-f64a6925-1048-4cd6-9a41-faf81a6da32b.png)
+This is after we took that same dataframe and dropped the housing units column so we could take a closer look at the sale price per square foot and the gross rent. ![Screenshot 2022-08-10 141038](https://user-images.githubusercontent.com/107158380/184040470-d510294e-3c94-45c3-94b8-90481b3f23b1.png) The lowest gross rent reported for the period between 2010 through 2016 would be in the year 2010, where the average gross rent was around $1239. The highest gross rent reported for the period between 2010 through 2016 would be in the year 2016, where the average gross rent was around $4390.
 
-This is where we displayed the dataframe of the investment portfolio after reorganizing and concatenating the two dataframes from each ticker.![Screenshot 2022-08-03 193950](https://user-images.githubusercontent.com/107158380/182756118-5b3adf38-b4f5-4a7e-abe5-05ff14898352.png)
+This is where we plotted the dataframe using the hvplot.line function. ![Screenshot 2022-08-10 141118](https://user-images.githubusercontent.com/107158380/184040630-68f33143-3640-4425-ba08-b6d9831af8d3.png) In 2011 there was a drop in the average sale price per square foot where it was $341.90 compared to when it was \$369.84 in 2010. During this time the gross rent increased from $1,239 to $1,530.
 
-This is where we displayed the dataframe of the list of the entire financial assets data, the crypto wallet and the investment portfolio.![Screenshot 2022-08-03 194116](https://user-images.githubusercontent.com/107158380/182756337-fbd04482-84cd-4e38-a546-a374fb74a3e7.png)
+This is where we created a new dataframe with using the groupby function to group the data by year and neighborhood, while aggregating the results by taking the average values. ![Screenshot 2022-08-10 141140](https://user-images.githubusercontent.com/107158380/184040936-06bd329c-4ffd-4729-b4d4-ac64a81e3517.png)
 
-This is where we plotted a pie chart of that dataframe to help visualize the composition of the member's entire portfolio.![Screenshot 2022-08-03 194143](https://user-images.githubusercontent.com/107158380/182756453-b722f6c0-7376-4d17-95a7-73cef27d881c.png)
+This is where we took that same dataframe and dropped the housing units column again using the drop function. ![Screenshot 2022-08-10 141206](https://user-images.githubusercontent.com/107158380/184041027-864c1b9d-d33d-4da5-878f-a1c06371546f.png)
 
-This is where we displayed the dataframe of the historical data/closing prices after reorganizing and concatenating the two dataframes from each ticker.![Screenshot 2022-08-03 194222](https://user-images.githubusercontent.com/107158380/182756714-165bb78f-5a8d-4f0c-abea-a4731aba7c68.png)
+This is where we plotted the dataframe and added a widget that allows the user to go interact with the visiualization and select which neighborhood they would like to see. ![Screenshot 2022-08-10 141252](https://user-images.githubusercontent.com/107158380/184041144-cdbf7ce6-1051-4f7f-b78b-408208921775.png) For the Anza Vista neighborhood, the average sale price per square foot for 2016 is $88.40, which is significantly less than it was in 2012 at $344.49
 
-This is where we displayed the 30 year simulation dataframe after running our simulation. ![Screenshot 2022-08-03 194256](https://user-images.githubusercontent.com/107158380/182756958-709bf833-54ab-4e6e-80ae-34f73331eebe.png)
+This is where we are reading in a new csv file that is required soon and creating a dataframe for it. ![Screenshot 2022-08-10 141312](https://user-images.githubusercontent.com/107158380/184041239-b7cd3ff6-1e8a-46bf-bd05-c9ae6c0f7513.png)
 
-This is where we used the calc_cumulative_return() function to get the cumulative returns of each simulation. ![Screenshot 2022-08-03 194409](https://user-images.githubusercontent.com/107158380/182757167-86bebaee-9dc0-4e30-9e9f-8adf149d26ef.png)
+This is where we created a new dataframe with the original data grouped by neighborhood. ![Screenshot 2022-08-10 141336](https://user-images.githubusercontent.com/107158380/184050860-712d550a-bf8b-4777-9738-ecf6a3f48b87.png)
 
-This is where we displayed the simulated cumulative returns of the thirty year simulation with a line plot. ![Screenshot 2022-08-03 194438](https://user-images.githubusercontent.com/107158380/182757264-a18406b9-4e3d-4306-bd89-f5988ec05b07.png)
+This is after we concantenated the two dataframes to include the housing information and the coordinates.![Screenshot 2022-08-10 141359](https://user-images.githubusercontent.com/107158380/184050935-3703e349-5d72-423a-8528-b151fc52be93.png)
 
-This is where we displayed the probability distribution of the thirty year simulation with a histogram.![Screenshot 2022-08-03 194502](https://user-images.githubusercontent.com/107158380/182757413-55a44ce2-f462-40fd-aff5-e638c773f34a.png)
+This is where we used the new dataframe with the housing information and coordinates to plot this points visualization. ![Screenshot 2022-08-10 141525](https://user-images.githubusercontent.com/107158380/184051007-2944f72a-dd18-4f56-918f-0f93e2dd1e7e.png)
 
-This is where we displayed the summary statistics of the cumulative returns of the thirty year simulation.![Screenshot 2022-08-03 194523](https://user-images.githubusercontent.com/107158380/182757505-383ade7f-9385-482b-8088-180f1c0e868e.png)
+The neighborhood that has the highest gross rent would be Westwood Park with a gross rent of $3,959. The neighborhood that has the highest sale price per square foot would be Union Square District with a sale price per square foot of $903.99. Generally speaking, the growth in rental income significantly exceeds that of the growth in sales prices. The uptick in sales prices is so miniscule for most neighborhoods, and there are also some neighborhoods where the sales price is on the decline. The neighborhoods that I would suggest for investment inlcude Alamo Square, Anza Vista ,Financial District South, Hayes Valley, Ingleside, and Marina just to name a few. The thing that all of these neighborhoods have in common is that they all have recent declining trends in sales prices. Rent is skyrocketing across all neighborhoods regardless of their sales price. It obviously is more complicated that what we are demonstrating here, but the main idea that we are trying to prove is that their is a higher profit margin for the investments with lower costs, with similar sources of revenue.
 
-This is where we displayed the 10 year simulation dataframe after running our simulation.![Screenshot 2022-08-03 194608](https://user-images.githubusercontent.com/107158380/182757570-495b1b48-53c0-43d0-8db1-81a1b8c9e462.png)
-
-This is where we used the calc_cumulative_return() function to get the cumulative returns of each simulation.![Screenshot 2022-08-03 194629](https://user-images.githubusercontent.com/107158380/182757629-7d8fc93c-672e-4cfb-b7a0-ed993d6522af.png)
-
-This is where we displayed the simulated cumulative returns of the ten year simulation with a line plot.![Screenshot 2022-08-03 194650](https://user-images.githubusercontent.com/107158380/182757672-79a781fa-e270-465d-9389-9d160f7fa307.png)
-
-This is where we displayed the probability distribution of the ten year simulation with a histogram.![Screenshot 2022-08-03 194707](https://user-images.githubusercontent.com/107158380/182757756-91cbd4bc-f68e-47cf-8a9f-e384bbc3688a.png)
-
-This is where we displayed the summary statistics of the cumulative returns of the ten year simulation.![Screenshot 2022-08-03 194730](https://user-images.githubusercontent.com/107158380/182757801-ccd4695f-b4ce-4b4b-bc9b-4b0fb0887bf6.png)
-
-
-It is not that simple when trying to invest for retirement. TIME is the biggest factor when it comes to investing for someone's retirement. Weighting the porfolio more heavily to stocks has the potential for a higher reward, but that comes with the higher risks that are associated with that. The CI lower and upper for the 10 year majority stocks portfolio are much lower than that of the 30 year balanced portfolio. It really would not be reccomended to invest mostly instocks unless you are really young or trying to play catchup. What is really recommended for investing in someone's retirement is to invest as much as you can as soon as you can. Trying to weight your portfolio more heavily to stocks is not something you want to do if you want to retire in ten years, because it is way too risky and as seen from this example, you are pretty much not even able to retire after ten years in the best case scenario, and in the worst case scenario you are going to have to give up your plan of retirement.
 
 ---
 
